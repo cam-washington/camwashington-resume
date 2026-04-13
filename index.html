@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cameron Washington — Portfolio</title>
+  <meta name="description" content="Personal portfolio — projects, skills, contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="theme--light">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#hero" class="nav__brand">Cameron W.</a>
+      <button id="nav-toggle" class="nav__toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul id="nav-list" class="nav__list">
+        <li class="nav__item"><a href="#hero" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+        <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__controls">
+        <button id="theme-toggle" class="btn btn--ghost" aria-pressed="false" title="Toggle dark mode">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero container">
+      <div class="hero__content">
+        <img src="images/profile.jpg" alt="Profile photo of Cameron" class="hero__avatar">
+        <div>
+          <h1 class="hero__title">Hi, I'm <span class="accent">Cameron</span></h1>
+          <p class="hero__subtitle">Computer Science student — building responsive, user-focused web applications with JavaScript.</p>
+          <p class="typing" aria-live="polite" id="typing-text"></p>
+          <div class="hero__cta">
+            <a href="#portfolio" class="btn">View Work</a>
+            <a href="assets/resume.pdf" class="btn btn--outline" download>Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2 class="section-title">About</h2>
+      <div class="about__grid">
+        <div>
+          <p>I’m a computer science student at St. Ambrose University focused on building clean, responsive web applications using modern JavaScript. I enjoy creating intuitive user experiences, working with APIs, and optimizing performance in small, efficient builds. Currently, I’m expanding my skills in full-stack development and looking for opportunities to apply them in real-world projects.</p>
+          <ul class="about__facts">
+            <li><strong>Location:</strong> Davenport, IA</li>
+            <li><strong>Studying:</strong> Computer Science</li>
+            <li><strong>Interests:</strong> Web dev, data structures, lacrosse</li>
+          </ul>
+        </div>
+        <div aria-hidden="true">
+          <h3>Education</h3>
+          <p><strong>St. Ambrose University</strong> — B.S. Computer Science (in progress)</p>
+          <h3>Experience</h3>
+          <p>Developed multiple web-based projects involving responsive design, JavaScript interactivity, and API integration, with experience using Git for version control.</p>
+          <p>I’m especially interested in opportunities where I can contribute to real products, collaborate with teams, and continue growing as a developer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills__list">
+        <div class="skill">
+          <h4>HTML/CSS</h4>
+          <div class="progress" data-value="90" aria-hidden="true"><span class="progress__bar"></span></div>
+        </div>
+        <div class="skill">
+          <h4>JavaScript (ES6+)</h4>
+          <div class="progress" data-value="80"><span class="progress__bar"></span></div>
+        </div>
+        <div class="skill">
+          <h4>React</h4>
+          <div class="progress" data-value="70"><span class="progress__bar"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio container">
+      <h2 class="section-title">Portfolio</h2>
+
+      <div class="portfolio__filters" role="tablist" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="web" role="tab">Web</button>
+        <button class="filter-btn" data-filter="js" role="tab">JavaScript</button>
+        <button class="filter-btn" data-filter="school" role="tab">School</button>
+      </div>
+
+      <div class="portfolio__grid" id="projects">
+        <article class="card project" data-tags="web js" tabindex="0">
+          <img src="images/portfolio/project-1.jpg" alt="Project 1 screenshot" class="card__media">
+          <div class="card__body">
+            <h3 class="card__title">Personal Portfolio Website</h3>
+            <p class="card__text">Designed and developed a responsive portfolio website featuring dynamic filtering, theme toggling, and API integration.</p>
+            <div class="card__actions">
+              <button class="btn btn--sm js-open-modal" data-title="Personal Portfolio Website" data-desc="Built a fully responsive portfolio using HTML, CSS, and JavaScript. Features include a dark/light mode toggle with localStorage, animated typing effect, project filtering system, and a contact form with real-time validation. Integrated a REST API to dynamically display content and implemented accessible UI patterns throughout.">Details</button>
+              <a href="https://github.com/cam-washington" class="btn btn--link" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal__panel" role="document">
+        <button class="modal__close" aria-label="Close modal">✕</button>
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+
+    <section id="contact" class="contact container">
+      <h2 class="section-title">Contact</h2>
+      <form id="contact-form" class="form" novalidate>
+        <label class="form__row">
+          <span class="form__label">Name</span>
+          <input id="name" name="name" type="text" required minlength="2" class="form__control" />
+          <small class="form__error" id="name-error" aria-live="polite"></small>
+        </label>
+
+        <label class="form__row">
+          <span class="form__label">Email</span>
+          <input id="email" name="email" type="email" required class="form__control" />
+          <small class="form__error" id="email-error" aria-live="polite"></small>
+        </label>
+
+        <label class="form__row">
+          <span class="form__label">Message</span>
+          <textarea id="message" name="message" required minlength="10" rows="6" class="form__control"></textarea>
+          <small class="form__error" id="message-error" aria-live="polite"></small>
+        </label>
+
+        <div class="form__actions">
+          <button type="submit" class="btn">Send</button>
+          <div id="form-status" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Cameron Washington — Built with care. <a href="#hero">Back to top</a></p>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script type="module" src="js/portfolio-filter.js"></script>
+  <script type="module" src="js/api.js"></script>
+</body>
+</html>
