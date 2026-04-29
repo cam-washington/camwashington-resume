@@ -5,8 +5,12 @@ const projects = document.querySelectorAll('.project');
 filters.forEach(btn => {
   btn.addEventListener('click', () => {
     // active styling
-    filters.forEach(b => b.classList.remove('active'));
+    filters.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
     btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
 
     // filtering
     const filter = btn.dataset.filter;
